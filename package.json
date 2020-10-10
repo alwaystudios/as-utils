@@ -1,7 +1,7 @@
 {
   "name": "@alwaystudios/as-utils",
   "author": "Alwaystudios Ltd.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "engines": {
     "node": ">=10"
@@ -17,7 +17,7 @@
     "test": "jest --maxWorkers=4 src",
     "install-peers": "install-peers -f",
     "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
-    "format": "prettier --write '{src,test}/**/*.{js,ts,tsx,json,css,md}'",
+    "format": "prettier --write 'src/**/*.{js,ts,tsx,json,css,md}'",
     "build": "rollup -c",
     "clean": "sh cleanup.sh"
   },
