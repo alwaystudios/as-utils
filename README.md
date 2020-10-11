@@ -61,3 +61,11 @@ decrypts a string using aes-256-cbc
   const hash = encrypt(dataToEncrypt, key)
   const decryptedData = decrypt(hash, key)
 ```
+
+## createSubscriberProcess
+
+creates a subscriber process that will run a poller process on a given interval and then process that data
+
+```
+  createSubscriberProcess(pollerProcessFunction, processDataFunction, 200)
+```

@@ -17,7 +17,7 @@ export const encrypt = (text: string, key: Buffer): Hash => {
   return { iv: iv.toString('hex'), encryptedData: encryptedData.toString('hex') }
 }
 
-export const decrypt = (hash: Hash, key: Buffer) => {
+export const decrypt = (hash: Hash, key: Buffer): string => {
   try {
     const decipher = crypto.createDecipheriv('aes-256-cbc', key, Buffer.from(hash.iv, 'hex'))
     const decryptedData = Buffer.concat([
