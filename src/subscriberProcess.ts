@@ -8,6 +8,7 @@ const runningState = (): [() => boolean, (running: boolean) => void] => {
 export const createSubscriberProcess = <T>(
   pollerProcess: () => Promise<T>,
   processData: (data: T) => void,
+  processError: (err: any) => void,
   interval: number,
 ): NodeJS.Timeout => {
   const [isRunning, setRunning] = runningState()
@@ -23,7 +24,7 @@ export const createSubscriberProcess = <T>(
         setRunning(false)
       })
       .catch((err) => {
-        console.error(`subscriber process failed with ${err}`)
+        processError(err)
         setRunning(false)
       })
   }

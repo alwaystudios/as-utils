@@ -67,5 +67,5 @@ decrypts a string using aes-256-cbc
 creates a subscriber process that will run a poller process on a given interval and then process that data
 
 ```
-  createSubscriberProcess(pollerProcessFunction, processDataFunction, 200)
+  createSubscriberProcess(pollerProcessAsyncFunction, processDataFunction, processErrorFunction, 200)
 ```
