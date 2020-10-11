@@ -7,7 +7,7 @@ describe('subscriberProcess', () => {
   const processData = jest.fn()
   const processError = jest.fn()
 
-  it('polls for data and then processes that data', async () => {
+  it('continually polls for data and then processes that data', async () => {
     const pollerProcess = async () => {
       await promiseTimeout(100)
       return 'test data'
@@ -17,7 +17,24 @@ describe('subscriberProcess', () => {
 
     await promiseRetry()(async () => {
       expect(processData).toHaveBeenCalledWith('test data')
-      expect(processData).toHaveBeenCalledTimes(1)
+      expect(processData).toHaveBeenCalledTimes(2)
+      expect(processError).not.toHaveBeenCalled()
+    })
+    clearInterval(id)
+  })
+
+  it('continually polls for data and then asynchronously processes that data', async () => {
+    const processDataAsync = jest.fn().mockResolvedValue(true)
+    const pollerProcess = async () => {
+      await promiseTimeout(100)
+      return 'test data'
+    }
+
+    const id = createSubscriberProcess(pollerProcess, processDataAsync, processError, 200)
+
+    await promiseRetry()(async () => {
+      expect(processDataAsync).toHaveBeenCalledWith('test data')
+      expect(processDataAsync).toHaveBeenCalledTimes(2)
       expect(processError).not.toHaveBeenCalled()
     })
     clearInterval(id)
