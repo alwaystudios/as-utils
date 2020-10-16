@@ -1,7 +1,7 @@
 {
   "name": "@alwaystudios/as-utils",
   "author": "Alwaystudios Ltd.",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "license": "MIT",
   "engines": {
     "node": ">=10"
@@ -27,7 +27,9 @@
       "pre-push": "yarn build && yarn test"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "promised-csv": "^1.0.1"
+  },
   "peerDependencies": {},
   "devDependencies": {
     "@types/jest": "^26.0.14",

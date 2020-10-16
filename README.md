@@ -69,3 +69,27 @@ creates a subscriber process that will run a poller process on a given interval 
 ```
   createSubscriberProcess(pollerProcessAsyncFunction, processDataFunction, processErrorFunction, 200)
 ```
+
+## batchProcessor
+
+Processes data in batches (default batch size = 100)
+
+```
+  await batchProcessor(data, func, batchSize)
+```
+
+## csvBatchRunner
+
+Reads a csv and runs a processor function (default batch size = 100)
+
+```
+  await csvBatchRunner({ filename, f, onError: onErrorFunction, batchSize })
+```
+
+## readCsv
+
+Reads data from a csv file
+
+```
+  const data = await readCsv(filename, onErrorFunction)
+```
