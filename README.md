@@ -93,3 +93,11 @@ Reads data from a csv file
 ```
   const data = await readCsv(filename, onErrorFunction)
 ```
+
+## isPlainObject
+
+```
+  if(isPlainObject({ test: 'test' })) {
+    // do something
+  }
+```

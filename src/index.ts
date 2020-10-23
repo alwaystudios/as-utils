@@ -5,8 +5,10 @@ import { promiseTimeout } from './promiseTimeout'
 import { concatenate, decrypt, encrypt } from './strings'
 import { createSubscriberProcess } from './subscriberProcess'
 import { processTimer } from './timings'
+import { isPlainObject } from './typeFucntions'
 
 export {
+  isPlainObject,
   batchProcessor,
   readCsv,
   csvBatchRunner,
