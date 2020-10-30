@@ -29,3 +29,11 @@ export const decrypt = (hash: Hash, key: Buffer): string => {
     throw new Error('Failed to decrypt')
   }
 }
+
+export const kebabify = (str: string): string => {
+  return str ? str.trim().replace('-', ' ').replace(/ /g, '-') : ''
+}
+
+export const dekebabify = (str: string): string => {
+  return str ? str.trim().replace(/-/g, ' ') : ''
+}

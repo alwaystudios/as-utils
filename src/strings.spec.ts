@@ -1,4 +1,4 @@
-import { concatenate, decrypt, encrypt } from './strings'
+import { concatenate, decrypt, dekebabify, encrypt, kebabify } from './strings'
 import crypto from 'crypto'
 
 describe('strings', () => {
@@ -40,6 +40,26 @@ describe('strings', () => {
       const hash = encrypt(dataToEncrypt, key)
       expect(() => decrypt({ ...hash, iv: 'this is not the iv' }, key)).toThrowError(
         'Failed to decrypt',
+      )
+    })
+  })
+
+  describe('kebabify / dekebabify', () => {
+    it('kebabifies replacing hyphens', () => {
+      expect(kebabify('  nice-and-easy spaghetti bolognese  ')).toBe(
+        'nice-and-easy-spaghetti-bolognese',
+      )
+    })
+
+    it('kebabifies', () => {
+      expect(kebabify('  nice and easy spaghetti bolognese  ')).toBe(
+        'nice-and-easy-spaghetti-bolognese',
+      )
+    })
+
+    it('dekebabifies', () => {
+      expect(dekebabify('  nice-and-easy-spaghetti-bolognese  ')).toBe(
+        'nice and easy spaghetti bolognese',
       )
     })
   })
