@@ -37,3 +37,8 @@ export const kebabify = (str: string): string => {
 export const dekebabify = (str: string): string => {
   return str ? str.trim().replace(/-/g, ' ') : ''
 }
+
+export const sentenceCase = (sentence: string) => {
+  const trimmed = sentence.trim()
+  return trimmed.charAt(0).toUpperCase() + trimmed.slice(1)
+}

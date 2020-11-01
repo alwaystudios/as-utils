@@ -106,3 +106,7 @@ Reads data from a csv file
 
 normal text
 kebabified-text
+
+## sentenceCase
+
+Capitalise the first character of the first word in a sentence

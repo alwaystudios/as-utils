@@ -1,4 +1,4 @@
-import { concatenate, decrypt, dekebabify, encrypt, kebabify } from './strings'
+import { concatenate, decrypt, dekebabify, encrypt, kebabify, sentenceCase } from './strings'
 import crypto from 'crypto'
 
 describe('strings', () => {
@@ -61,6 +61,12 @@ describe('strings', () => {
       expect(dekebabify('  nice-and-easy-spaghetti-bolognese  ')).toBe(
         'nice and easy spaghetti bolognese',
       )
+    })
+  })
+
+  describe('sentence case', () => {
+    it('trims and capitalises the first character of a sentence', () => {
+      expect(sentenceCase('  the cat sat on the mat  ')).toBe('The cat sat on the mat')
     })
   })
 })
