@@ -116,3 +116,9 @@ Capitalise the first character of the first word in a sentence
 ```
   [1, 2, undefined, null, 0].filter(truthy) // returns [1, 2]
 ```
+
+## waitUntil
+
+```
+  await waitUntil(() => expect(mock).toHaveBeenCalledTimes(1))
+```
