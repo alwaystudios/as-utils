@@ -4,10 +4,14 @@ import { promiseRetry } from './promiseRetry'
 import { promiseTimeout } from './promiseTimeout'
 import { concatenate, decrypt, dekebabify, encrypt, kebabify, sentenceCase } from './strings'
 import { createSubscriberProcess } from './subscriberProcess'
+import { noop } from './test/noop'
 import { processTimer } from './timings'
+import { truthy } from './truthy'
 import { isPlainObject } from './typeFucntions'
 
 export {
+  noop,
+  truthy,
   isPlainObject,
   batchProcessor,
   readCsv,

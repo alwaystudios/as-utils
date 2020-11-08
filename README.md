@@ -110,3 +110,9 @@ kebabified-text
 ## sentenceCase
 
 Capitalise the first character of the first word in a sentence
+
+## truthy
+
+```
+  [1, 2, undefined, null, 0].filter(truthy) // returns [1, 2]
+```
