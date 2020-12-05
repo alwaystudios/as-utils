@@ -7,10 +7,11 @@ import { createSubscriberProcess } from './subscriberProcess'
 import { noop } from './test/noop'
 import { processTimer } from './timings'
 import { truthy } from './truthy'
-import { isPlainObject } from './typeFucntions'
+import { isPlainObject, removeUndefined } from './typeFunctions'
 import { waitUntil } from './waitUntil'
 
 export {
+  removeUndefined,
   noop,
   waitUntil,
   truthy,

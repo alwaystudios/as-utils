@@ -8,3 +8,6 @@ export const isPlainObject = (v: any): boolean => {
   const prototype = getPrototypeOf(v)
   return prototype === null || prototype === proto
 }
+
+export const removeUndefined = (data: Record<string, unknown>) =>
+  Object.entries(data).reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {})

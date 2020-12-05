@@ -122,3 +122,7 @@ Capitalise the first character of the first word in a sentence
 ```
   await waitUntil(() => expect(mock).toHaveBeenCalledTimes(1))
 ```
+
+## removeUndefined
+
+Removes undefined keys from an object

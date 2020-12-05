@@ -1,6 +1,16 @@
-import { isPlainObject } from './typeFucntions'
+import { isPlainObject, removeUndefined } from './typeFunctions'
 
 describe('type functions', () => {
+  describe('removeUndefined', () => {
+    it('removes undefined values from an object', () => {
+      expect(removeUndefined({ one: undefined, two: null, three: 0, four: 'test' })).toEqual({
+        two: null,
+        three: 0,
+        four: 'test',
+      })
+    })
+  })
+
   describe('isPlainObject', () => {
     it('returns false for a NaN', () => {
       expect(isPlainObject(NaN)).toBe(false)
