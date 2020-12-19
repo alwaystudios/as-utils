@@ -1,7 +1,7 @@
 {
   "name": "@alwaystudios/as-utils",
   "author": "Alwaystudios Ltd.",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "license": "MIT",
   "repository": "git@github.com:alwaystudios/as-utils.git",
   "engines": {
@@ -29,11 +29,14 @@
     }
   },
   "dependencies": {
-    "promised-csv": "^1.0.1"
+    "deep-object-diff": "^1.1.0",
+    "promised-csv": "^1.0.1",
+    "ramda": "^0.27.1"
   },
   "peerDependencies": {},
   "devDependencies": {
     "@types/jest": "^26.0.14",
+    "@types/ramda": "^0.27.34",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
     "@typescript-eslint/parser": "^4.3.0",
     "eslint": "^7.10.0",

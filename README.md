@@ -139,3 +139,44 @@ Debounce a function with a given timeout (default = 500)
   debouncedFunc(2)
   debouncedFunc(3) // myFunc is called with 3
 ```
+
+## deepPartialDiff
+
+```
+  const data = {
+    topKey1: {
+      midKey1: 'value midKey 1',
+      midKey2: 3,
+    },
+    topKey2: {
+      midKey1: 33,
+      midKey2: 'value midKey 2',
+      midKey3: {
+        lowKey: 444,
+      },
+    },
+  }
+
+  deepPartialDiff({ topKey1: {} }, data) // = data
+
+  deepPartialDiff(
+        {
+          topKey1: {
+            midKey1: 'value midKey 1',
+            midKey2: 3,
+          },
+          topKey2: {
+            midKey1: 33,
+            midKey2: 'value midKey 2',
+            midKey3: {},
+          },
+        },
+        data,
+      ) // = {
+      topKey2: {
+        midKey3: {
+          lowKey: 444,
+        },
+      },
+    }
+```
