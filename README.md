@@ -126,3 +126,16 @@ Capitalise the first character of the first word in a sentence
 ## removeUndefined
 
 Removes undefined keys from an object
+
+## debounce
+
+Debounce a function with a given timeout (default = 500)
+
+```
+  const timeout = 1000
+  const debouncedFunc = debounce(myFunc, timeout)
+
+  debouncedFunc(1)
+  debouncedFunc(2)
+  debouncedFunc(3) // myFunc is called with 3
+```

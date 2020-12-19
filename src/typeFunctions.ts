@@ -11,3 +11,7 @@ export const isPlainObject = (v: any): boolean => {
 
 export const removeUndefined = (data: Record<string, unknown>) =>
   Object.entries(data).reduce((acc, [key, value]) => ({ ...acc, [key]: value }), {})
+
+export const getProperty = <T, K extends keyof T>(obj: T, key: K) => {
+  return obj[key]
+}

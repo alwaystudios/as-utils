@@ -1,6 +1,20 @@
-import { isPlainObject, removeUndefined } from './typeFunctions'
+import { getProperty, isPlainObject, removeUndefined } from './typeFunctions'
 
 describe('type functions', () => {
+  describe('getProperty', () => {
+    it('gets properties', () => {
+      const test = {
+        one: 'string',
+        two: 33,
+        three: undefined,
+      }
+
+      expect(getProperty(test, 'one')).toEqual('string')
+      expect(getProperty(test, 'two')).toEqual(33)
+      expect(getProperty(test, 'three')).toBeUndefined()
+    })
+  })
+
   describe('removeUndefined', () => {
     it('removes undefined values from an object', () => {
       expect(removeUndefined({ one: undefined, two: null, three: 0, four: 'test' })).toEqual({
