@@ -180,3 +180,12 @@ Debounce a function with a given timeout (default = 500)
       },
     }
 ```
+
+## TaskQueue
+
+A limited parallel execution, asynchronous task queue
+
+```
+  const queue = new TaskQueue(concurrencyLimit)
+  queue.addTask(fn)
+```

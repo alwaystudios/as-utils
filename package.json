@@ -1,7 +1,7 @@
 {
   "name": "@alwaystudios/as-utils",
   "author": "Alwaystudios Ltd.",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "license": "MIT",
   "repository": "git@github.com:alwaystudios/as-utils.git",
   "engines": {
@@ -50,7 +50,8 @@
     "rollup": "^2.28.2",
     "rollup-plugin-typescript2": "^0.27.3",
     "ts-jest": "^26.4.1",
-    "typescript": "^4.0.3"
+    "typescript": "^4.0.3",
+    "wait-for-expect": "^3.0.2"
   },
   "jest": {
     "testEnvironment": "node"
